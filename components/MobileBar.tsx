@@ -6,6 +6,9 @@ import { WhatsAppIcon } from "./Icons";
 export function MobileBar() {
   if (!site.phone && !whatsappConfigured) return null;
   return (
+    <>
+    {/* Spacer so the fixed bar never covers the end of the footer. */}
+    <div className="h-14 md:hidden" aria-hidden="true" />
     <div className="fixed inset-x-0 bottom-0 z-40 flex border-t border-line bg-white md:hidden">
       {site.phone && <a href={`tel:${site.phone}`} className="flex-1 py-4 text-center font-heading text-sm font-semibold">Call now</a>}
       {whatsappConfigured && (
@@ -13,5 +16,6 @@ export function MobileBar() {
           className="flex flex-1 items-center justify-center gap-2 bg-accent py-4 font-heading text-sm font-semibold"><WhatsAppIcon /> WhatsApp</a>
       )}
     </div>
+    </>
   );
 }
