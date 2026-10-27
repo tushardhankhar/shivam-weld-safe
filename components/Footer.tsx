@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, site, photoCredits } from "@/lib/site";
+import { nav, site } from "@/lib/site";
 import { categories } from "@/lib/products";
 import { ContactDetails } from "./ContactLinks";
 
@@ -31,10 +31,13 @@ export function Footer() {
           <p>© {new Date().getFullYear()} {site.name}. GST-registered since {site.gstRegisteredSince}.</p>
           <p>Wholesale safety and welding supplies · Ajmeri Gate, New Delhi</p>
         </div>
-        <details className="container-x pb-6 text-[0.7rem] text-steel/80">
-          <summary className="w-fit cursor-pointer py-1 underline-offset-2 hover:underline">Photo credits</summary>
-          <p className="mt-2 leading-relaxed">Photography via Unsplash: {photoCredits.map((c, i) => <span key={c.name}><a href={c.url} target="_blank" rel="noopener noreferrer" className="underline">{c.name}</a>{i < photoCredits.length - 1 ? ", " : ""}</span>)}.</p>
-        </details>
+        <div className="container-x pb-6">
+          <a href="https://studio.tushardhankhar.com/" target="_blank" rel="noopener" className="group inline-flex items-center gap-2.5 rounded-full border border-white/10 py-1.5 pl-1.5 pr-4 text-xs text-steel transition-colors hover:border-[#C9A55C]/60 hover:text-white">
+            <svg viewBox="0 0 40 40" aria-hidden="true" className="h-6 w-6 shrink-0"><rect width="40" height="40" rx="12" fill="#123B33" /><path d="M9.5 9.5h21v5.2h-7.9V27h-5.2V14.7H9.5z" fill="#F4EEE0" /><rect x="17.6" y="29.3" width="4.8" height="4.8" rx=".6" transform="rotate(45 20 31.7)" fill="#C9A55C" /></svg>
+            <span>Built and managed by <span className="font-heading font-extrabold tracking-tight text-white">Studio</span><em className="font-serif text-[0.85rem] text-[#E9DDC3]"> by Tushar</em></span>
+            <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">↗</span>
+          </a>
+        </div>
       </div>
     </footer>
   );

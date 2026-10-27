@@ -60,12 +60,3 @@ export const nav = [
   { href: "/why-choose-us/", label: "Why Choose Us" },
   { href: "/contact/", label: "Contact" },
 ] as const;
-
-/** Stock photography used on the site (Unsplash License). */
-export const photoCredits = [
-  { name: "burak kose", url: "https://unsplash.com/photos/a-welder-uses-sparks-to-join-metal-FQynd63cHeQ" },
-  { name: "John Kakuk", url: "https://unsplash.com/photos/men-in-safety-vests-standing-in-front-of-a-construction-vehicle-hfj5CG9dvuU" },
-  { name: "Cemrecan Yurtman", url: "https://unsplash.com/photos/a-man-welding-a-piece-of-metal-in-a-factory-6Ips_2SI-qE" },
-  { name: "Miguel Aguilera", url: "https://unsplash.com/photos/person-welding-metal-using-electrode-holder-SpVXUF0bL00" },
-  { name: "Tuccera LLC", url: "https://unsplash.com/photos/black-work-boots-with-bandana-and-sticky-note-jvxy5eSmwwg" },
-] as const;
