@@ -4,7 +4,8 @@
  *
  * VERIFIED: name, owner, GST registration date, registered address, product
  * categories (IndiaMART listing + GST record).
- * TO BE SUPPLIED BY THE BUSINESS: whatsappNumber, phone, email, mapsUrl, siteUrl.
+ * Phone and email: from the business's caution-tape flyer (October 2026).
+ * TO BE SUPPLIED BY THE BUSINESS: whatsappNumber, mapsUrl, siteUrl.
  */
 export const site = {
   name: "Shivam Weld Safe India",
@@ -19,8 +20,8 @@ export const site = {
   // WhatsApp number in international format, digits only, e.g. "919876543210".
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
   // Phone for click-to-call, international format with +, e.g. "+919876543210".
-  phone: process.env.NEXT_PUBLIC_PHONE ?? "",
-  email: process.env.NEXT_PUBLIC_EMAIL ?? "",
+  phone: process.env.NEXT_PUBLIC_PHONE || "+917678685147",
+  email: process.env.NEXT_PUBLIC_EMAIL || "shivamweldsafeindia@gmail.com",
   // Paste the Google Maps share link for the shop here.
   mapsUrl: process.env.NEXT_PUBLIC_MAPS_URL ?? "",
 
@@ -63,10 +64,8 @@ export const nav = [
 /** Stock photography used on the site (Unsplash License). */
 export const photoCredits = [
   { name: "burak kose", url: "https://unsplash.com/photos/a-welder-uses-sparks-to-join-metal-FQynd63cHeQ" },
-  { name: "TECNIC Bioprocess Solutions", url: "https://unsplash.com/photos/a-worker-uses-a-grinder-creating-sparks-9IEGO2zcM2s" },
   { name: "John Kakuk", url: "https://unsplash.com/photos/men-in-safety-vests-standing-in-front-of-a-construction-vehicle-hfj5CG9dvuU" },
   { name: "Cemrecan Yurtman", url: "https://unsplash.com/photos/a-man-welding-a-piece-of-metal-in-a-factory-6Ips_2SI-qE" },
   { name: "Miguel Aguilera", url: "https://unsplash.com/photos/person-welding-metal-using-electrode-holder-SpVXUF0bL00" },
   { name: "Tuccera LLC", url: "https://unsplash.com/photos/black-work-boots-with-bandana-and-sticky-note-jvxy5eSmwwg" },
-  { name: "Compagnons", url: "https://unsplash.com/photos/a-close-up-of-a-yellow-caution-tape-D7Fjd1-Jkbc" },
 ] as const;

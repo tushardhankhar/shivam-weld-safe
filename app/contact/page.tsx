@@ -31,7 +31,7 @@ export default function ContactPage() {
             </div>
             {whatsappConfigured && (
               <a href={whatsappLink(`Hello ${site.shortName}, I would like to make an enquiry.`)} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-navy px-6 py-3 font-heading text-sm font-semibold text-white hover:bg-navy-deep"><WhatsAppIcon /> Chat on WhatsApp</a>
+                className="inline-flex items-center gap-2 rounded-md bg-ink px-6 py-3 font-heading text-sm font-semibold text-white hover:bg-ink-deep"><WhatsAppIcon /> Chat on WhatsApp</a>
             )}
           </aside>
         </div>

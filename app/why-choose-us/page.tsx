@@ -18,8 +18,8 @@ export default function WhyPage() {
           <ol className="grid gap-6 md:grid-cols-2">
             {strengths.map((s, n) => (
               <li key={s.title} className="flex gap-5 rounded-lg border border-line bg-white p-7 shadow-sm">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent font-heading text-sm font-bold">{n + 1}</span>
-                <div><h2 className="text-lg font-semibold">{s.title}</h2><p className="mt-2 text-navy/75">{s.text}</p></div>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-soft font-heading text-accent text-sm font-bold">{n + 1}</span>
+                <div><h2 className="text-lg font-semibold">{s.title}</h2><p className="mt-2 text-ink/75">{s.text}</p></div>
               </li>
             ))}
           </ol>

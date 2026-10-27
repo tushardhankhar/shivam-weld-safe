@@ -38,13 +38,13 @@ export function EnquiryForm({ defaultRequirement = "", idPrefix = "enq" }: { def
     setSentLink(link);
   }
 
-  const field = "mt-1.5 w-full rounded-md border border-navy/25 bg-white px-3.5 py-3 text-base focus:border-navy";
+  const field = "mt-1.5 w-full rounded-md border border-ink/25 bg-white px-3.5 py-3 text-base focus:border-ink";
   const row = (k: keyof EnquiryData, label: string, opts: { required?: boolean; type?: string; autoComplete?: string; area?: boolean } = {}) => {
     const id = `${uid}-${k}`;
     const common = { id, value: data[k], onChange: set(k), className: field, "aria-invalid": !!errors[k], "aria-describedby": errors[k] ? `${id}-err` : undefined, autoComplete: opts.autoComplete };
     return (
       <div>
-        <label htmlFor={id} className="font-heading text-sm font-medium">{label}{opts.required ? <span aria-hidden="true"> *</span> : <span className="font-body text-navy/55"> (optional)</span>}</label>
+        <label htmlFor={id} className="font-heading text-sm font-medium">{label}{opts.required ? <span aria-hidden="true"> *</span> : <span className="font-body text-ink/55"> (optional)</span>}</label>
         {opts.area ? <textarea rows={4} {...common} /> : <input type={opts.type ?? "text"} {...common} />}
         {errors[k] && <p id={`${id}-err`} role="alert" className="mt-1 text-sm font-semibold text-red-700">{errors[k]}</p>}
       </div>
@@ -53,12 +53,12 @@ export function EnquiryForm({ defaultRequirement = "", idPrefix = "enq" }: { def
 
   if (sentLink) {
     return (
-      <div role="status" className="rounded-lg border border-navy/15 bg-white p-6">
+      <div role="status" className="rounded-lg border border-ink/15 bg-white p-6">
         <p className="font-heading text-lg font-semibold">WhatsApp opened with your enquiry</p>
-        <p className="mt-2 text-navy/75">Press <strong>Send</strong> in WhatsApp to deliver it. Your enquiry is only received once you send the message.</p>
+        <p className="mt-2 text-ink/75">Press <strong>Send</strong> in WhatsApp to deliver it. Your enquiry is only received once you send the message.</p>
         <div className="mt-5 flex flex-wrap gap-3">
-          <a href={sentLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 font-heading text-sm font-semibold"><WhatsAppIcon /> Open WhatsApp again</a>
-          <button type="button" onClick={() => setSentLink(null)} className="rounded-md border border-navy/30 px-5 py-2.5 font-heading text-sm font-semibold">Edit enquiry</button>
+          <a href={sentLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 font-heading text-sm text-white font-semibold"><WhatsAppIcon /> Open WhatsApp again</a>
+          <button type="button" onClick={() => setSentLink(null)} className="rounded-md border border-ink/30 px-5 py-2.5 font-heading text-sm font-semibold">Edit enquiry</button>
         </div>
       </div>
     );
@@ -79,10 +79,10 @@ export function EnquiryForm({ defaultRequirement = "", idPrefix = "enq" }: { def
       </div>
       {row("requirement", "Product requirement", { required: true })}
       {row("message", "Message", { area: true })}
-      <button type="submit" disabled={!whatsappConfigured} className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 font-heading text-sm font-semibold transition-colors hover:bg-[#dcc700] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
+      <button type="submit" disabled={!whatsappConfigured} className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 font-heading text-sm font-semibold text-white transition-colors hover:bg-accent-deep disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto">
         <WhatsAppIcon /> Send enquiry on WhatsApp
       </button>
-      <p className="text-xs text-navy/60">Submitting opens WhatsApp with your details pre-filled. Nothing is sent until you press Send there.</p>
+      <p className="text-xs text-ink/60">Submitting opens WhatsApp with your details pre-filled. Nothing is sent until you press Send there.</p>
     </form>
   );
 }

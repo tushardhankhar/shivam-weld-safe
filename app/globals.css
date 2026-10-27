@@ -2,13 +2,17 @@
 
 /* Design tokens — change brand colours and fonts here only. */
 @theme {
-  --color-navy: #2f3342;
-  --color-navy-deep: #252936;
-  --color-accent: #f2da00;
-  --color-steel: #bfbfbf;
-  --color-ivory: #faf8f2;
-  --color-mist: #f1f1ee;
-  --color-line: #e3e2dc;
+  /* From the ENGIWELD logo: warm charcoal lettering and weld red, on warm neutrals.
+     Red is a signal colour: primary actions, active states and small brand marks only. */
+  --color-ink: #1f1b18;
+  --color-ink-deep: #151210;
+  --color-accent: #c92e28;
+  --color-accent-deep: #a8241f;
+  --color-accent-soft: #f9ecea;
+  --color-steel: #b5afa9;
+  --color-ivory: #fbfaf8;
+  --color-mist: #f4f2ef;
+  --color-line: #e7e3de;
   --font-heading: var(--font-poppins), system-ui, sans-serif;
   --font-body: var(--font-raleway), system-ui, sans-serif;
 }
@@ -16,18 +20,22 @@
 html { scroll-behavior: smooth; }
 body {
   background: var(--color-ivory);
-  color: var(--color-navy);
+  color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.65;
 }
 h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.01em; }
-:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; box-shadow: 0 0 0 5px var(--color-navy); }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; box-shadow: 0 0 0 5px var(--color-ink); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
 @utility container-x { max-width: 72rem; margin-inline: auto; padding-inline: 1.25rem; }
 @utility section-y { padding-block: 6rem; }
 @utility eyebrow { font-family: var(--font-heading); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Swipeable rows (mobile carousels) without a visible scrollbar */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* Technical grid texture for dark sections */
 .bg-grid {
@@ -38,17 +46,11 @@ h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.01em; }
 }
 .bg-grid-light {
   background-image:
-    linear-gradient(rgba(47,51,66,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(47,51,66,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(31,27,24,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,27,24,0.05) 1px, transparent 1px);
   background-size: 48px 48px;
 }
-.shadow-soft { box-shadow: 0 1px 2px rgba(47,51,66,0.05), 0 12px 32px -12px rgba(47,51,66,0.18); }
+.shadow-soft { box-shadow: 0 1px 2px rgba(31,27,24,0.05), 0 12px 32px -12px rgba(31,27,24,0.18); }
 
-/* Marker-style highlight used on key headline words */
-.mark-accent {
-  background-image: linear-gradient(transparent 62%, var(--color-accent) 62%, var(--color-accent) 92%, transparent 92%);
-  padding-inline: 0.1em;
-  margin-inline: -0.1em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
+/* Key headline words in weld red, echoing the logo's charcoal/red split */
+.mark-accent { color: var(--color-accent); }

@@ -19,13 +19,13 @@ export default function IndustriesPage() {
           <ul className="grid gap-6 md:grid-cols-2">
             {industries.map((i, n) => (
               <li key={i.name} className="rounded-lg border border-line bg-white p-7 shadow-sm">
-                <p className="eyebrow text-navy/50">0{n + 1}</p>
+                <p className="eyebrow text-ink/50">0{n + 1}</p>
                 <h2 className="mt-2 text-xl font-semibold">{i.name}</h2>
-                <p className="mt-3 text-navy/75">{i.text}</p>
+                <p className="mt-3 text-ink/75">{i.text}</p>
               </li>
             ))}
           </ul>
-          <p className="mt-10 text-navy/75">See what we supply in the <Link href="/products/" className="font-semibold underline decoration-accent decoration-2 underline-offset-4">product catalogue</Link>.</p>
+          <p className="mt-10 text-ink/75">See what we supply in the <Link href="/products/" className="font-semibold underline decoration-accent/50 decoration-2 underline-offset-4 transition-colors hover:decoration-accent">product catalogue</Link>.</p>
         </div>
       </section>
       <CtaBand />

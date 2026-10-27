@@ -11,6 +11,10 @@ export function CategoryIcon({ name, className = "h-12 w-12" }: { name: Category
     regulator: <><circle {...p} cx="24" cy="22" r="10" /><path {...p} d="M24 22l5-5M24 12v-6M20 6h8M18 34l-2 8M30 34l2 8M12 42h24" /></>,
     harness: <><path {...p} d="M16 6l8 8 8-8M24 14v10M24 24l-10 8v10M24 24l10 8v10M14 32h20" /></>,
     tape: <><path {...p} d="M4 14l40 8M4 26l40 8M4 38l40 8" /><path {...p} d="M12 12l6 14M28 16l6 14" /></>,
+    arrestor: <><path {...p} d="M18 6h12v6H18zM16 12h16v24H16zM18 36h12v6H18z" /><path {...p} d="M16 20h16M16 28h16" /></>,
+    torch: <><path {...p} d="M4 34l22-10M8 40l22-10" /><path {...p} d="M26 24l10-6 4 8-10 4z" /><path {...p} d="M40 22c3-2 4-6 2-9M44 26c3-3 3-8 0-12" /><path {...p} d="M12 33l2 5M18 30l2 5" /></>,
+    flowmeter: <><path {...p} d="M20 6h8v30h-8z" /><circle {...p} cx="24" cy="16" r="2" /><path {...p} d="M28 12h3M28 20h3M28 28h3M16 36h16v6H16zM24 42v4" /></>,
+    cable: <><path {...p} d="M6 12c10 0 10 12 20 12s10 12 18 12" /><path {...p} d="M6 20c8 0 8 12 18 12s10 8 18 8" /><path {...p} d="M2 9h6v6H2zM2 17h6v6H2z" /></>,
   };
   return <svg viewBox="3 3 42 42" aria-hidden="true" className={className}>{paths[name]}</svg>;
 }

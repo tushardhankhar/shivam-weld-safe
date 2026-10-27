@@ -26,6 +26,7 @@ export function organizationJsonLd() {
     "@id": `${site.url}/#organization`,
     name: site.name,
     url: site.url,
+    logo: `${site.url}/logo.svg`,
     founder: { "@type": "Person", name: site.owner },
     description: "Wholesale supplier of industrial safety equipment and welding accessories in New Delhi.",
     address: {

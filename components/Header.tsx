@@ -12,16 +12,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-ivory/95 backdrop-blur">
-      <div className="container-x flex h-16 items-center justify-between gap-3">
-        <Link href="/" className="flex shrink-0 flex-col whitespace-nowrap leading-tight" onClick={() => setOpen(false)}>
-          <span className="font-heading text-base font-bold text-navy sm:text-lg">{site.shortName}</span>
-          <span className="eyebrow text-[0.62rem] text-navy/60">India · New Delhi</span>
+      <div className="container-x flex h-[4.5rem] items-center justify-between gap-3">
+        <Link href="/" className="flex shrink-0 items-center gap-3 whitespace-nowrap leading-tight" onClick={() => setOpen(false)}>
+          <img src="/logo.svg" alt={`${site.shortName} home`} width={798} height={314} className="h-11 w-auto sm:h-14" />
+          <span className="hidden flex-col border-l border-line pl-3 sm:flex">
+            <span className="font-heading text-base font-bold text-ink">{site.shortName}</span>
+            <span className="eyebrow text-[0.62rem] text-ink/60">India · New Delhi</span>
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
           {nav.map((n) => (
             <Link key={n.href} href={n.href} aria-current={isActive(n.href) ? "page" : undefined}
-              className={`border-b-2 py-1 text-sm font-semibold transition-colors ${isActive(n.href) ? "border-accent text-navy" : "border-transparent text-navy/70 hover:text-navy"}`}>
+              className={`border-b-2 py-1 text-sm font-semibold transition-colors ${isActive(n.href) ? "border-accent text-ink" : "border-transparent text-ink/70 hover:text-ink"}`}>
               {n.label}
             </Link>
           ))}
@@ -30,7 +33,7 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <ButtonLink href="/contact/" className="whitespace-nowrap !px-4 !py-2.5 text-xs sm:!px-6 sm:text-sm"><span className="sm:hidden">Get Quote</span><span className="hidden sm:inline">Request a Quote</span></ButtonLink>
           <button type="button" aria-expanded={open} aria-controls="mobile-nav" aria-label="Toggle menu"
-            onClick={() => setOpen((o) => !o)} className="rounded-md border border-navy/20 p-2 lg:hidden">
+            onClick={() => setOpen((o) => !o)} className="rounded-md border border-ink/20 p-2 lg:hidden">
             <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
             </svg>
@@ -44,7 +47,7 @@ export function Header() {
             {nav.map((n) => (
               <li key={n.href}>
                 <Link href={n.href} onClick={() => setOpen(false)} aria-current={isActive(n.href) ? "page" : undefined}
-                  className={`block border-l-4 px-3 py-3 font-semibold ${isActive(n.href) ? "border-accent" : "border-transparent text-navy/75"}`}>
+                  className={`block border-l-4 px-3 py-3 font-semibold ${isActive(n.href) ? "border-accent" : "border-transparent text-ink/75"}`}>
                   {n.label}
                 </Link>
               </li>

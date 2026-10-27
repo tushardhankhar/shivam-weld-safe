@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 const poppins = Poppins({ variable: "--font-poppins", subsets: ["latin"], weight: ["500", "600", "700"], display: "swap" });
 const raleway = Raleway({ variable: "--font-raleway", subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
 
-export const viewport: Viewport = { themeColor: "#2f3342", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#1f1b18", width: "device-width", initialScale: 1 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN" className={`${poppins.variable} ${raleway.variable}`}>
       <body className="flex min-h-screen flex-col">
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent focus:text-navy focus:px-4 focus:py-2 focus:font-semibold">Skip to content</a>
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:font-semibold">Skip to content</a>
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />

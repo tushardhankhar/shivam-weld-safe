@@ -33,9 +33,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <PageHero eyebrow="Category" title={c.name} intro={c.summary} />
       <section className="section-y">
         <div className="container-x">
-          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-navy/65"><Link href="/products/" className="underline">Products</Link> / {c.name}</nav>
+          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-ink/65"><Link href="/products/" className="underline">Products</Link> / {c.name}</nav>
           <ProductGrid items={items} showFilters={false} />
-          <p className="mt-12 text-sm text-navy/70">Browse other categories: {categories.filter((x) => x.slug !== c.slug).map((x, i, a) => <span key={x.slug}><Link href={`/products/${x.slug}/`} className="underline">{x.name}</Link>{i < a.length - 1 ? ", " : ""}</span>)}.</p>
+          <p className="mt-12 text-sm text-ink/70">Browse other categories: {categories.filter((x) => x.slug !== c.slug).map((x, i, a) => <span key={x.slug}><Link href={`/products/${x.slug}/`} className="underline">{x.name}</Link>{i < a.length - 1 ? ", " : ""}</span>)}.</p>
         </div>
       </section>
       <CtaBand />
